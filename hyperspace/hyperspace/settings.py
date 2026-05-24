@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'services',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +77,12 @@ WSGI_APPLICATION = 'hyperspace.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog_db',            # Veritabanının adı
+        'USER': 'postgres',           # Varsayılan kullanıcı "postgres"
+        'PASSWORD': '',   # PostgreSQL kurulumunda koyduğun şifre
+        'HOST': '127.0.0.1',          # Yerel bilgisayar (localhost)
+        'PORT': '5432',               # Standart PostgreSQL portu
     }
 }
 
